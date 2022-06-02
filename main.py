@@ -42,13 +42,22 @@ def update():
     if keyboard.right:
         fox.x = fox.x + 2
 
+    if keyboard.a:
+        fox.x = fox.x - 5
+    if keyboard.w:
+        fox.y = fox.y - 5
+    if keyboard.s:
+        fox.y = fox.y + 5
+    if keyboard.d:
+        fox.x = fox.x + 5
+
     coin_collected = fox.colliderect(coin)
 
     if coin_collected:
-        score = score + 30
+        score = score + 10
         place_coin()
 
-clock.schedule(time_up, 10.0)
+clock.schedule(time_up, 30.0)
 place_coin()
 
 pgzrun.go()
